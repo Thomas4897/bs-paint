@@ -55,8 +55,17 @@
 	align-self: center;
 }
 
+.brush-icon {
+	filter: invert(0);
+}
+
+.fill-icon {
+	filter: invert(0);
+}
+
 .current-brush,
-.palette-color {
+.palette-color,
+.current-fill {
 	width: 30px;
 	height: 30px;
 	border: 1px solid black;
@@ -64,10 +73,10 @@
 
 .canvas {
 	display: grid;
-	grid-template-rows: repeat(50, 1fr);
-	grid-template-columns: repeat(50, 1fr);
+	grid-template-rows: repeat(80, 1fr);
+	grid-template-columns: repeat(80, 1fr);
 	height: 700px;
-	width: 700px;
+	width: 1500px;
 	border: 1px solid black;
 }
 
