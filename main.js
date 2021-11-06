@@ -22,6 +22,12 @@ const fillIcon = document.querySelector(".fill-icon");
 const currentFill = document.querySelector(".current-fill");
 const square = document.querySelectorAll(".canvas .square");
 
+darkModeButton.style.cursor = "pointer";
+colorSelector.style.cursor = "pointer";
+brushIcon.style.cursor = "pointer";
+fillIcon.style.cursor = "pointer";
+canvas.style.cursor = "pointer";
+
 //! Set clicked to false;
 let clicked = false;
 
@@ -84,7 +90,6 @@ const paintDrag = canvas.addEventListener("mousemove", function (event) {
 	}
 });
 
-darkModeButton.style.cursor = "pointer";
 const changeTheme = darkModeButton.addEventListener("click", function () {
 	body.classList.toggle("dark-mode");
 });
