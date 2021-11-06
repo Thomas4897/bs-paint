@@ -1,5 +1,4 @@
 .app {
-	height: 500px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -8,7 +7,7 @@
 
 .dark-mode {
 	background-color: black;
-	color: white;
+	filter: invert(1);
 }
 
 .headings {
@@ -118,4 +117,8 @@
 
 .color-11 {
 	background-color: black;
+}
+
+.color-12 {
+	background-color: #b19cd9;
 }
