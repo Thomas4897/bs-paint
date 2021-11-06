@@ -22,6 +22,9 @@ const fillIcon = document.querySelector(".fill-icon");
 const currentFill = document.querySelector(".current-fill");
 const square = document.querySelectorAll(".canvas .square");
 
+//! Set clicked to false;
+let clicked = false;
+
 const newBrush = colorSelector.addEventListener("click", function (event) {
 	const currentColor = currentBrush.classList[1];
 
@@ -58,9 +61,6 @@ const fill = currentFill.addEventListener("click", function () {
 		square[i].classList.replace(square[i].classList[1], currentColor);
 	}
 });
-
-//! Set clicked to false;
-let clicked = false;
 
 //! When mouseDown turns click true
 const mouseDown = document.addEventListener("mousedown", function () {
