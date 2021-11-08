@@ -16,7 +16,6 @@ const colorSelector2 = document.querySelector(".palette2");
 
 const currentBrush = document.querySelector(".current-brush");
 const currentBrush2 = document.querySelector(".current-brush");
-console.log(currentBrush.style.backgroundColor);
 
 const body = document.querySelector("body");
 const darkModeButton = document.querySelector(".dark-mode-button");
@@ -30,6 +29,7 @@ const square = document.querySelectorAll(".canvas .square");
 
 darkModeButton.style.cursor = "pointer";
 colorSelector.style.cursor = "pointer";
+colorSelector2.style.cursor = "pointer";
 brushIcon.style.cursor = "pointer";
 fillIcon.style.cursor = "pointer";
 canvas.style.cursor = "pointer";
@@ -103,31 +103,26 @@ const changeTheme = darkModeButton.addEventListener("click", function () {
 const paletteIcon = document.querySelector(".palette2 .palette-icon");
 const palette2Colors = document.querySelectorAll(".palette2 .palette-color");
 
-for (let i = 0; i < palette2Colors.length; i++) {
-	let randomColor = Math.floor(Math.random() * 1677721559).toString(16);
+// for (let i = 0; i < palette2Colors.length; i++) {
+// 	let randomColor = Math.floor(Math.random() * 1677721559).toString(16);
 
-	palette2Colors[i].style.backgroundColor = "#" + randomColor;
-}
+// 	palette2Colors[i].style.backgroundColor = "#" + randomColor;
+// }
 
-const paletteTheme = paletteIcon.addEventListener("click", function () {
-	for (let i = 0; i < palette2Colors.length; i++) {
-		let randomColor = Math.floor(Math.random() * 1677721559).toString(16);
+// const paletteTheme = paletteIcon.addEventListener("click", function () {
+// 	for (let i = 0; i < palette2Colors.length; i++) {
+// 		let randomColor = Math.floor(Math.random() * 1677721559).toString(16);
 
-		palette2Colors[i].style.backgroundColor = "#" + randomColor;
-		console.log(i, palette2Colors[i].style.backgroundColor);
-	}
-});
+// 		palette2Colors[i].style.backgroundColor = "#" + randomColor;
+// 		console.log(i, palette2Colors[i].style.backgroundColor);
+// 	}
+// });
 
 const newBrush2 = colorSelector2.addEventListener("click", function (event) {
 	const currentBrushColor = currentBrush.style.backgroundColor;
 	const currentColor = currentBrush.classList[1];
-	console.log(currentBrushColor);
 
 	if (event.target.classList[0] === "palette-color") {
-		console.log(event.target.classList[1]);
-		console.log(event.target.style.backgroundColor);
-		console.log(currentColor);
-
 		currentBrush.classList.replace(currentColor, event.target.classList[1]);
 		currentFill.classList.replace(
 			currentFill.classList[1],
