@@ -34,9 +34,11 @@ brushIcon.style.cursor = "pointer";
 fillIcon.style.cursor = "pointer";
 canvas.style.cursor = "pointer";
 
-//! Set clicked to false;
+//! Set clicked to false for drag paint
 let clicked = false;
 
+//! When a color from palette is clicked it changes the brush class to that class
+//! which sets the background color to the selected palette-color background-color
 const newBrush = colorSelector.addEventListener("click", function (event) {
 	const currentColor = currentBrush.classList[1];
 
@@ -48,6 +50,7 @@ const newBrush = colorSelector.addEventListener("click", function (event) {
 		);
 	}
 
+	//! if the palette-color is black invert the brush and fill icons else inverts them back to normal
 	if (currentBrush.classList[1] === "color-11") {
 		brushIcon.style.filter = "invert(1)";
 		fillIcon.style.filter = "invert(1)";
@@ -57,6 +60,7 @@ const newBrush = colorSelector.addEventListener("click", function (event) {
 	}
 });
 
+//! When the canvas is clicked on it changes the square's in the canvas class to that of the brush
 const paint = canvas.addEventListener("click", function (event) {
 	const currentColor = currentBrush.classList[1];
 	const square = event.target.classList[1];
@@ -66,6 +70,7 @@ const paint = canvas.addEventListener("click", function (event) {
 	}
 });
 
+//! When the fill icon is clicked on it changes the all the squares in the canvas to the fill's class
 const fill = currentFill.addEventListener("click", function () {
 	const currentColor = currentFill.classList[1];
 
@@ -96,6 +101,7 @@ const paintDrag = canvas.addEventListener("mousemove", function (event) {
 	}
 });
 
+//! When the dark mode button is clicked it inverts everything in the body
 const changeTheme = darkModeButton.addEventListener("click", function () {
 	body.classList.toggle("dark-mode");
 });
@@ -118,6 +124,8 @@ const palette2Colors = document.querySelectorAll(".palette2 .palette-color");
 // 	}
 // });
 
+//! When a color from palette2 is clicked it changes the brush class to that class
+//! which sets the background color to the selected palette-color background-color
 const newBrush2 = colorSelector2.addEventListener("click", function (event) {
 	const currentBrushColor = currentBrush.style.backgroundColor;
 	const currentColor = currentBrush.classList[1];
@@ -128,5 +136,13 @@ const newBrush2 = colorSelector2.addEventListener("click", function (event) {
 			currentFill.classList[1],
 			event.target.classList[1]
 		);
+	}
+
+	if (currentBrush.classList[1] === "color-11") {
+		brushIcon.style.filter = "invert(1)";
+		fillIcon.style.filter = "invert(1)";
+	} else {
+		brushIcon.style.filter = "invert(0)";
+		fillIcon.style.filter = "invert(0)";
 	}
 });
